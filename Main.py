@@ -5,10 +5,27 @@ import matplotlib.pyplot as plt
 
 fastf1.plotting.setup_mpl(misc_mpl_mods=False, color_scheme='fastf1')
 
-# Define track lengths for specific Grand Prix races (you can add more if needed)
+# Define track lengths for all circuits that have hosted an F1 Grand Prix
 TRACK_LENGTHS = {
-    'Monza': 5793,  # Example, Monza track length in meters
-    # Add other races with their respective track lengths in meters
+    'monza': 5793,
+    'albert park': 5303,
+    'baku city circuit': 6003,
+    'barcelona-catalunya': 4655,
+    'silverstone': 5891,
+    'spa-francorchamps': 7004,
+    'circuit de la sarthe': 13850,
+    'circuit gilles villeneuve': 4216,
+    'interlagos': 4309,
+    'suzuka': 5807,
+    'circuit de monaco': 3337,
+    'yas marina': 5281,
+    'sepang': 5543,
+    'shanghai': 5451,
+    'sochi': 5848,
+    'valencia': 5419,
+    'watkins glen': 5435,
+    'zeltweg': 3200,
+    # Add other tracks as needed
 }
 
 def get_user_input():
@@ -18,8 +35,8 @@ def get_user_input():
         print("That’s not a number, try again 😭")
         return
 
-    gp = input("Enter the Grand Prix name (e.g., 'Monza') or type 'Testing' for test sessions: ").strip()
-    if gp.lower() == "testing":
+    gp = input("Enter the Grand Prix name (e.g., 'Monza') or type 'Testing' for test sessions: ").strip().lower()  # Convert to lowercase
+    if gp == "testing":
         test_session()
         return
 
